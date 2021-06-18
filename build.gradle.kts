@@ -1,6 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.ir.backend.js.compile
 
 fun properties(key: String) = project.findProperty(key).toString()
 
@@ -28,6 +29,7 @@ repositories {
 }
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    implementation(files("lib/druid-parser-1.1.23.jar"))
 }
 
 // Configure gradle-intellij-plugin plugin.

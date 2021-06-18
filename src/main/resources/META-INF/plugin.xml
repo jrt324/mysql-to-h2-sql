@@ -7,13 +7,27 @@
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <applicationService serviceImplementation="com.github.jrt324.mysqltoh2sql.services.MyApplicationService"/>-->
+<!--        <projectService serviceImplementation="com.github.jrt324.mysqltoh2sql.services.MyProjectService"/>-->
+<!--    </extensions>-->
+
+<!--    <applicationListeners>-->
+<!--        <listener class="com.github.jrt324.mysqltoh2sql.listeners.MyProjectManagerListener"-->
+<!--                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
+<!--    </applicationListeners>-->
+
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.jrt324.mysqltoh2sql.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.jrt324.mysqltoh2sql.services.MyProjectService"/>
+        <!-- Add your extensions here -->
+        <applicationService serviceInterface="org.exam.service.MysqlToH2Service"
+                            serviceImplementation="org.exam.service.impl.MysqlToH2ServiceImpl"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.jrt324.mysqltoh2sql.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="mysql-to-h2.id" class="org.exam.ui.MysqlToH2Action" text="MysqlToH2"
+                description="MysqlToH2">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
