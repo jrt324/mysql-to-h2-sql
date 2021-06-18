@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.jrt324.mysqltoh2sql.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.jrt324.mysqltoh2sql.MyBundle
 
 class MyApplicationService {
 
