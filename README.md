@@ -7,6 +7,8 @@
 ## Intro
 fork from https://gitee.com/xiejx618/mysql-to-h2
 
+Support Latest Version IntelliJ 2023.1
+
 
 <!-- Plugin description -->
 This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
